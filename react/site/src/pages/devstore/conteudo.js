@@ -37,7 +37,7 @@ export default function Conteudo() {
     }
 
     async function inserir() {
-        if (idAlterando == 0) {
+        if (idAlterando === 0) {
             let r = await api.inserir( nome, categoria, precode, precopor, avaliacao,  descricao, estoque, linkimagem)
 
             if (r.erro)
@@ -117,14 +117,14 @@ export default function Conteudo() {
             <LoadingBar color="rgba(17, 159, 220, 1)" ref={loading} />
             <div className="container1">
                 <div className="sloga">
-                    <img className="logo" src="/assents/images/logodevstore.jpg" alt="" />
+                    <img className="logo" src="/assets/images/logodevstore.jpg" alt="" />
                     <div className="titulo"><span>Dev</span> Store</div>
                 </div>
                 <div className="vazio">
 
                 </div>
                 <div className="geren">
-                    <div className="opcao1"> Gerenciamento <img className="setaprabaixo" src="/assents/images/chevron-down.svg" alt="" /> </div>
+                    <div className="opcao1"> Gerenciamento <img className="setaprabaixo" src="/assets/images/chevron-down.svg" alt="" /> </div>
                 </div>
                 <div className="alun">
                     <div className="barra1roxo"></div>
@@ -135,22 +135,22 @@ export default function Conteudo() {
                 <div className="cabecalho">
                     <div className="usuario-imagem">  
                         <div className="usuario">
-                            <img src="/assents/images/Cirilops.jpg" alt="nao foi" /> 
+                            <img src="/assets/images/Cirilops.jpg" alt="" /> 
                             <div className="bullet">3</div>
                         </div>
                         <div className="mensagem-usu"> Olá, Cirilão </div>   
                     </div>
                     <div className="contalunos">
-                        <img className="recarregar" src="/assents/images/refresh.svg" alt="" />
+                        <img className="recarregar" src="/assets/images/refresh.svg" alt="" />
                     </div>
                     <div className="contalunos">
-                        <img className="logout" src="/assents/images/log-out.svg" alt="" />
+                        <img className="logout" src="/assets/images/log-out.svg" alt="" />
                     </div>
                 </div>
                 <div className="cadrastro">
                     <div className="cab"> 
                     <Barra/>
-                    <div className="titulo-alun"> {idAlterando == 0 ? "Novo Produto" : "Alterando Produto " + idAlterando}</div>
+                    <div className="titulo-alun"> {idAlterando === 0 ? "Novo Produto" : "Alterando Produto " + idAlterando}</div>
                     </div>
                     <div className="cxinputs">
                         <div className="dados">
@@ -164,7 +164,7 @@ export default function Conteudo() {
                             <div className="ds"> Descrição: </div>
                             <textarea type="text" value={descricao} onChange={e => setDescricao(e.target.value)} />  
                         </div>
-                        <div className="botao"> <button onClick={inserir}> {idAlterando == 0 ? "Cadastrar" : "Alterar"} </button> </div>
+                        <div className="botao"> <button onClick={inserir}> {idAlterando === 0 ? "Cadastrar" : "Alterar"} </button> </div>
                     </div>
                 </div> 
                 <div className="listaalunos">
@@ -182,8 +182,6 @@ export default function Conteudo() {
                             <th className="numeroTb">Categoria</th>
                             <th className="turmaTb">Preço</th>
                             <th className="cursoTb">Estoque</th>
-                            <th className="espaço"></th>
-                            <th className="espaço"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -200,8 +198,8 @@ export default function Conteudo() {
                                 <td>{item.ds_categoria}</td>
                                 <td>{item.vl_preco_de}</td>
                                 <td>{item.qtd_estoque}</td>
-                                <td className="botao-visivel"> <button onClick={() => editar(item)}> <img src="/assents/images/edit.svg" alt="" /> </button> </td>
-                                <td className="botao-visivel"> <button onClick={() => remover(item.id_produto)}  > <img src="/assents/images/trash.svg" alt="" /> </button> </td>
+                                <td className="botao-visivel"> <button onClick={() => editar(item)}> <img src="/assets/images/edit.svg" alt="" /> </button> </td>
+                                <td className="botao-visivel"> <button onClick={() => remover(item.id_produto)}  > <img src="/assets/images/trash.svg" alt="" /> </button> </td>
                             </tr>
                         )}
                     </tbody>

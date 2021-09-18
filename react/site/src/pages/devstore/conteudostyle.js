@@ -96,7 +96,7 @@ const ContainerConteudo = styled.div`
         
     }
     .setaprabaixo{
-        padding-left: 5em;
+        padding-left: 4em;
     }
 
     .alun {
